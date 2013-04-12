@@ -44,14 +44,21 @@
             return docFragment;
         }
 
-        var tags = ["cms", "javascript", "js", "ASP.NET MVC", ".net", ".net", "css",
+            var tags = ["cms", "javascript", "js", "ASP.NET MVC", ".net", ".net", "css", "css",
+                        "css", "css", "css", "css", "css", "css", "css", "css", "css", "css",
                        "wordpress", "xaml", "js", "http", "web", "asp.net", "asp.net MVC",
                        "ASP.NET MVC", "wp", "javascript", "js", "cms", "html", "javascript",
                        "http", "http", "CMS", "js", "js", "js", "js", "js", "js", "js", "js"];
 
         var tagCloud = generateTagCloud(tags, 17, 42);
 
-        document.body.appendChild(tagCloud);
+        var container = document.createElement('div');
+        container.style.width = 400 + 'px';
+        container.style.height = 500 + 'px';
+        container.style.backgroundColor = 'red';
+
+        container.appendChild(tagCloud);
+        document.body.appendChild(container);
     </script>
 </body>
 </html>
