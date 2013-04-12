@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Text Area</title>
+</head>
+<body>
+    <script>
+        var docFragment = document.createDocumentFragment();
+
+        var textArea = document.createElement('textarea');
+        textArea.id = 'textArea';
+        textArea.textContent = 'Telerik Academmy';
+
+        var inputColorFont = document.createElement('input');
+        inputColorFont.type = 'color';
+        inputColorFont.id = 'inputColorFont';
+        inputColorFont.onchange = changeTextFontColor;
+
+        var inputColorBackground = document.createElement('input');
+        inputColorBackground.type = 'color';
+        inputColorBackground.id = 'inputColorBackground';
+        inputColorBackground.onchange = changeBackgroundColor;
+
+        docFragment.appendChild(textArea);
+        docFragment.appendChild(inputColorFont);
+        docFragment.appendChild(inputColorBackground);
+
+        document.body.appendChild(docFragment);
+
+        function changeTextFontColor() {
+            return textArea.style.color = document.getElementById('inputColorFont').value;
+        }
+
+        function changeBackgroundColor() {
+            textArea.style.backgroundColor = document.getElementById('inputColorBackground').value;
+        }
+    </script>
+</body>
+</html>
